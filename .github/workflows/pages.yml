@@ -70,13 +70,13 @@ permissions:
   statuses: read      # exact-head merge-readiness audit
 
 concurrency:
-  group: pages
+  group: pages-startup-test
   # Let an active deployment finish before a newly triggered run starts.
   cancel-in-progress: false
 
 jobs:
   pages:
-    uses: TauCetiProject/TauCetiTools/.github/workflows/pages.yml@main
+    uses: TauCetiProject/TauCetiTools/.github/workflows/pages.yml@refactor/pages-reusable
     with:
       lean_root: TauCeti
       roadmap_repository: TauCetiProject/TauCetiRoadmap
